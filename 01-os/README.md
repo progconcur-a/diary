@@ -427,3 +427,26 @@ $ cat /proc/12345/status
 $ cat /proc/12345/maps
 $ cat /proc/12345/smaps
 ```
+
+## Appels systèmes utiles
+
+| Appel système | Description |
+| ------------- | ----------- |
+| `fork()` | Crée un nouveau processus en dupliquant le processus appelant. |
+| `exec()` | Exécute un nouveau programme dans le contexte du processus appelant. |
+| `wait()` | Attend la terminaison d'un processus enfant. |
+| `waitpid()` | Attend la terminaison d'un processus enfant spécifique. |
+| `clone()` | Crée un nouveau processus léger (thread) avec des options de partage personnalisées. |
+| `kill()` | Envoie un signal à un processus. |
+| `signal()` | Configure un gestionnaire de signal pour un signal donné. |
+| `pipe()` | Crée un tube (pipe) pour la communication entre processus. |
+| `shmget()` | Alloue un segment de mémoire partagée. |
+| `shmat()` | Attache un segment de mémoire partagée à l'espace d'adressage d'un processus. |
+| `sem_init()` | Initialise un sémaphore pour la synchronisation entre processus. |
+| `mmap()` | Mappe un fichier ou un périphérique dans l'espace d'adressage d'un processus. |
+| `mprotect()` | Modifie les protections d'accès pour une région de mémoire. |
+| `munmap()` | Supprime un mappage de mémoire. |
+| `nice()` | Modifie la priorité de planification d'un processus. |
+| `sched_setaffinity()` | Modifie l'affinité du processeur pour un processus. |
+| `getpriority()` | Obtient la priorité de planification d'un processus. |
+| `setpriority()` | Modifie la priorité de planification d'un processus. |
