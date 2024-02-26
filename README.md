@@ -32,11 +32,15 @@
 
 ## Journal de bord
 
-### Semaine 01
+### Semaine 01/02 OS/Process
 
-- [ ] Définir un système d'exploitation
-- [ ] Processus
-  - [ ] Définir un processus
-  - [ ] Créer un processus (`fork`, `exec`)
-  - [ ] Comprendre les états d'un processus
-  - [ ] Ordonnancement
+- [x] Définir un système d'exploitation
+  - [x] FreeRTOS (fifo, signaux, threads, semaphores, filesystem, timer)
+  - [x] POSIX (ps, cat, |...)
+- [x] Processus
+  - [x] Définir un processus
+  - [x] Créer un processus (`fork`, `exec`)
+  - [x] Comprendre les états d'un processus
+  - [x] Ordonnancement
+
+### Semaine 03 Architecture Processeur
