@@ -1,11 +1,27 @@
 # Système d'exploitation (POSIX)
 
-- [ ] Définir un système d'exploitation
-- [ ] Processus
-  - [ ] Définir un processus
-  - [ ] Créer un processus (`fork`, `exec`)
-  - [ ] Comprendre les états d'un processus
-  - [ ] Ordonnancement
+- [Système d'exploitation (POSIX)](#système-dexploitation-posix)
+  - [Processus](#processus)
+    - [États d'un processus](#états-dun-processus)
+  - [Etat du processus](#etat-du-processus)
+  - [Création d'un processus](#création-dun-processus)
+    - [`fork()`](#fork)
+    - [`exec()`](#exec)
+    - [Exemple de zombie](#exemple-de-zombie)
+    - [Status des processus avec `ps`](#status-des-processus-avec-ps)
+    - [Communication inter-processus (IPC)](#communication-inter-processus-ipc)
+      - [Exemple](#exemple)
+      - [Synchronisation de la mémoire partagée](#synchronisation-de-la-mémoire-partagée)
+  - [Processus léger versus processus (clone/fork)](#processus-léger-versus-processus-clonefork)
+    - [Processus](#processus-1)
+    - [Thread (Processus léger)](#thread-processus-léger)
+    - [Différences clés](#différences-clés)
+  - [Appel système `clone()`](#appel-système-clone)
+  - [Signaux](#signaux)
+  - [Information sur un processus](#information-sur-un-processus)
+    - [`pstree`](#pstree)
+    - [`proc`](#proc)
+  - [Appels systèmes utiles](#appels-systèmes-utiles)
 
 ## Processus
 
@@ -96,17 +112,17 @@ L'état du processus est une information clé pour comprendre ce que fait un pro
 
 Les processus dans les systèmes d'exploitation POSIX peuvent communiquer entre eux par plusieurs mécanismes de communication interprocessus (IPC - Inter-Process Communication). Ces mécanismes permettent aux processus de partager des données et de coordonner leurs actions. Voici les principaux moyens de communication interprocessus :
 
-Pipes (tuyaux) : Un pipe permet à un flux de données de passer d'un processus à l'autre. Les pipes anonymes sont utilisés pour la communication entre un processus parent et son enfant ou entre enfants d'un même parent. Les pipes nommés (FIFOs) peuvent être utilisés entre n'importe quels processus sur le système.
+**Pipes (tuyaux)** : Un pipe permet à un flux de données de passer d'un processus à l'autre. Les pipes anonymes sont utilisés pour la communication entre un processus parent et son enfant ou entre enfants d'un même parent. Les pipes nommés (FIFOs) peuvent être utilisés entre n'importe quels processus sur le système.
 
-Signaux : Les signaux sont des messages simples envoyés à un processus pour lui indiquer qu'un événement particulier s'est produit. Bien qu'ils ne transportent pas de grandes quantités de données, ils sont utiles pour contrôler les opérations des processus et pour la gestion d'événements asynchrones.
+**Signaux** : Les signaux sont des messages simples envoyés à un processus pour lui indiquer qu'un événement particulier s'est produit. Bien qu'ils ne transportent pas de grandes quantités de données, ils sont utiles pour contrôler les opérations des processus et pour la gestion d'événements asynchrones.
 
-Mémoire partagée : La mémoire partagée est un segment de mémoire qui peut être accédé par plusieurs processus. C'est un moyen efficace pour échanger de grandes quantités de données entre processus, car elle évite la copie de données d'un espace d'adressage à l'autre.
+**Mémoire partagée** : La mémoire partagée est un segment de mémoire qui peut être accédé par plusieurs processus. C'est un moyen efficace pour échanger de grandes quantités de données entre processus, car elle évite la copie de données d'un espace d'adressage à l'autre.
 
-Sémaphores : Les sémaphores sont utilisés pour synchroniser l'accès à des ressources partagées par plusieurs processus. Ils peuvent être utilisés pour éviter les conditions de course en contrôlant l'accès à des ressources telles que les fichiers ou les segments de mémoire partagée.
+**Sémaphores** : Les sémaphores sont utilisés pour synchroniser l'accès à des ressources partagées par plusieurs processus. Ils peuvent être utilisés pour éviter les conditions de course en contrôlant l'accès à des ressources telles que les fichiers ou les segments de mémoire partagée.
 
-Files de messages : Les files de messages permettent aux processus d'envoyer et de recevoir des messages sous forme de files d'attente. Chaque message est une structure de données qui peut contenir des informations variées. Les files de messages sont utiles pour échanger de petites quantités de données de manière asynchrone.
+**Files de messages** : Les files de messages permettent aux processus d'envoyer et de recevoir des messages sous forme de files d'attente. Chaque message est une structure de données qui peut contenir des informations variées. Les files de messages sont utiles pour échanger de petites quantités de données de manière asynchrone.
 
-Sockets : Les sockets permettent la communication entre processus sur le même ordinateur ou entre processus sur des ordinateurs différents dans un réseau. Ils supportent la communication en mode connecté (TCP) et non connecté (UDP) et sont la base de nombreuses communications réseau, y compris le Web.
+**Sockets** : Les sockets permettent la communication entre processus sur le même ordinateur ou entre processus sur des ordinateurs différents dans un réseau. Ils supportent la communication en mode connecté (TCP) et non connecté (UDP) et sont la base de nombreuses communications réseau, y compris le Web.
 
 Ces mécanismes offrent divers degrés d'abstraction et peuvent être choisis en fonction des besoins spécifiques en matière de communication interprocessus, comme la quantité de données à transférer, la nécessité de synchronisation ou la préférence entre la communication locale et la communication en réseau.
 

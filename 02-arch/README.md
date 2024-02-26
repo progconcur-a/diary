@@ -1,5 +1,10 @@
 # Architecture processeur
 
+- [Architecture processeur](#architecture-processeur)
+  - [Introduction](#introduction)
+  - [Historique](#historique)
+  - [Processeur moderne](#processeur-moderne)
+
 ## Introduction
 
 L'architecture d'un processeur est l'ensemble des éléments qui le compose et qui lui permettent de fonctionner. C'est un peu comme le corps humain, il y a des organes qui ont chacun un rôle bien précis.

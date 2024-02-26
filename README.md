@@ -20,5 +20,23 @@
   - [ ] Programmation Multicoeur
     - [ ] Parallélisme de données
     - [ ] Parallélisme de tâches
-  - [ ] Programmation GPU
     - [ ] OpenCL
+  - [ ] Programmation GPU
+    - [ ] Shaders/ComputeShaders
+    - [ ] CUDA
+  - [ ] Applications
+    - [ ] Interfaces graphiques
+    - [ ] Jeux vidéos
+    - [ ] Calcul scientifique
+    - [ ] Performance
+
+## Journal de bord
+
+### Semaine 01
+
+- [ ] Définir un système d'exploitation
+- [ ] Processus
+  - [ ] Définir un processus
+  - [ ] Créer un processus (`fork`, `exec`)
+  - [ ] Comprendre les états d'un processus
+  - [ ] Ordonnancement
