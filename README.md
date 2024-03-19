@@ -44,3 +44,19 @@
   - [x] Ordonnancement
 
 ### Semaine 03 Architecture Processeur
+
+- [x] Processeur simpl (ALU/Mémoire/Registres...)
+- [x] Coeurs
+- [x] Cache L1, L2, L3
+- [x] Vitesse de la RAM : très lent (50..200 cycles)
+- [x] Predicteur d'emranchement
+- [x] ALU/Floating point unit
+- [x] Datasheet processeur
+- [x] Die shot
+- [x] Pipeline
+- [ ] Points importants
+  - [ ] Le cache peut causer beaucoup de ralentissement dans un programme concurrent à cause des cache miss et du false sharing
+  - [ ] Un processeur contient entre 4 et 8 coeurs
+  - [ ] On peut faire tourner 2 thread sur chaque coeur (hyperthreading)
+  - [ ] Branches (if, while, goto) a risque sans predicteur d'emranchement parce qu'on peut devoir vider le pipeline (et perdre du temps)
+
