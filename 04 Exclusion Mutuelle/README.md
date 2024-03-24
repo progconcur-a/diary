@@ -108,3 +108,36 @@ $ wc -c < data
 ```
 
 On peut voir qu'il y a environ 1 change sur 10000 d'avoir un 7.
+
+## Autre Exemple
+
+Dans cet exemple, nous avons deux threads `a` et `b` qui partagent une variable globale `x`. Le thread `a` affecte la valeur `5` à `x` et l'affiche, tandis que le thread `b` affecte la valeur `7` à `x`. Les threads s'exécutent indépendamment et peuvent modifier `x` simultanément, ce qui peut entraîner des résultats imprévisibles.
+
+```cpp
+#include <iostream>
+#include <thread>
+
+static int x = 0;
+
+int a() { for(;;) { x = 5; std::cout << x; } }
+int b() { for(;;) x = 7; }
+
+int main() {
+    std::thread ta(a);
+    std::thread tb(b);
+    ta.join();
+    tb.join();
+}
+```
+
+> Exercice: Testez quelle est la probablilité d'avoir un 7 dans la sortie.
+
+Pour cela faite tourner le programme en redirigeant la sortie standard vers un fichier, puis comptez le nombre de 7 dans le fichier. Exécutez le programme pendant 5 secondes avec la commande `timeout`.
+
+Attention, le fichier peut être très volumineux, la commande grep pour chercher les 7 peut être utilisée comme suit:
+
+```bash
+$ timeout 5s ./a.out > data
+$ grep -o 5 data | wc -l
+$ grep -o 7 data | wc -l
+```
