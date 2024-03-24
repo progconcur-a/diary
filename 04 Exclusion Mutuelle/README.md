@@ -80,3 +80,31 @@ int main() {
 ## Verrous Mutex
 
 En C++, les verrous sont généralement implémentés à l'aide de la classe `std::mutex` de la bibliothèque standard. Un verrou de type `std::mutex` peut être verrouillé à l'aide de la méthode `lock()` et déverrouillé à l'aide de la méthode `unlock()`.
+
+## Exemple simple
+
+```cpp
+#include <iostream>
+#include <thread>
+
+static int x = 0;
+
+int a() { for(;;) { x = 5; std::cout << x; } }
+int b() { for(;;) x = 7; }
+
+int main() {
+    std::thread ta(a);
+    std::thread tb(b);
+    ta.join();
+    tb.join();
+}
+```
+
+```bash
+$ g++ sync.cpp
+$ timeout 10s ./a.out
+$ grep -o 7 data | wc -l
+$ wc -c < data
+```
+
+On peut voir qu'il y a environ 1 change sur 10000 d'avoir un 7.
