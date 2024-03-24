@@ -29,6 +29,8 @@
     - [ ] Jeux vidéos
     - [ ] Calcul scientifique
     - [ ] Performance
+- [ ] Système Distribué
+  - [ ] Docker
 
 ## Journal de bord
 
@@ -60,3 +62,14 @@
   - [ ] On peut faire tourner 2 thread sur chaque coeur (hyperthreading)
   - [ ] Branches (if, while, goto) a risque sans predicteur d'emranchement parce qu'on peut devoir vider le pipeline (et perdre du temps)
 
+### Semaine 04 Exclusion Mutuelle
+
+- [x] Protéger les données partagées entre plusieurs threads
+- [x] Protéger les ressources partagées entre plusieurs threads (fichiers,sockets, etc.)
+
+### Semaine 05 Semaphore
+
+- [x] Semaphore selon Edsger Dijkstra
+- [x] Semaphore en C++20 (`std::counting_semaphore`)
+
+### Semaine 06 Producteur Consommateur
