@@ -7,32 +7,30 @@
 #include <chrono>
 #include <atomic>
 #include <csignal>
-
-std::atomic<bool> done(false); // Contrôle la terminaison des threads
-const int MAX_BUFFER_SIZE = 100;
-std::vector<int> buffer;
-std::mutex mtx;
-std::condition_variable bufferCondition;
-
-#include <iostream>
 #include <sstream>
-#include <mutex>
+
+const int MAX_BUFFER_SIZE = 100;
+
+std::atomic<bool> done(false);
+std::vector<int> buffer;
+std::mutex m;
+std::condition_variable cv;
 
 class ThreadSafeCout {
-    std::mutex mtx;
+    std::mutex m;
     std::ostream &output;
 public:
     ThreadSafeCout(std::ostream& output=std::cout) : output(output) {}
 
     template<typename T>
     ThreadSafeCout& operator<<(const T& msg) {
-        std::lock_guard<std::mutex> guard(mtx);
+        std::lock_guard<std::mutex> guard(m);
         std::cout << msg;
         return *this;
     }
 
     ThreadSafeCout& operator<<(std::ostream& (*pf)(std::ostream&)) {
-        std::lock_guard<std::mutex> guard(mtx);
+        std::lock_guard<std::mutex> guard(m);
         std::cout << pf;
         return *this;
     }
@@ -40,11 +38,10 @@ public:
 
 static ThreadSafeCout scout(std::cout);
 
-
 void signalHandler(int signum) {
     scout << "Interrupt signal (" << signum << ") received.\n";
     done = true;
-    bufferCondition.notify_all();
+    cv.notify_all();
 }
 
 void producer(int id) {
@@ -53,10 +50,10 @@ void producer(int id) {
     std::uniform_int_distribution<> produceDist(0, 10);
 
     while (!done) {
-        std::unique_lock<std::mutex> lock(mtx);
+        std::unique_lock<std::mutex> lock(m);
         int numItems = produceDist(gen);
 
-        bufferCondition.wait(lock, [numItems] { 
+        cv.wait(lock, [numItems] { 
             return done || (buffer.size() + numItems) <= MAX_BUFFER_SIZE; 
         });
 
@@ -67,7 +64,7 @@ void producer(int id) {
 
         scout << "Producer " << id << " added " << numItems << " items." << std::endl;
         lock.unlock();
-        bufferCondition.notify_all();
+        cv.notify_all();
 
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
@@ -80,10 +77,10 @@ void consumer(int id) {
     std::uniform_int_distribution<> consumeDist(1, 5);
 
     while (!done) {
-        std::unique_lock<std::mutex> lock(mtx);
+        std::unique_lock<std::mutex> lock(m);
         int numItems = consumeDist(gen);
 
-        bufferCondition.wait(lock, [numItems] { 
+        cv.wait(lock, [numItems] { 
             return done || buffer.size() >= numItems; 
         });
         if (done) break;
@@ -93,7 +90,7 @@ void consumer(int id) {
 
         scout << "Consumer " << id << " removed " << numItems << " items." << std::endl;
         lock.unlock();
-        bufferCondition.notify_all();
+        cv.notify_all();
 
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
