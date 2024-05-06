@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
-
 const int N = 10'000;
-
 int main() {
     std::vector<std::vector<int>> matrix(N, std::vector<int>(N, 0));
 
