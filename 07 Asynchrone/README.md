@@ -30,6 +30,8 @@ Prenons l'exemple d'une page web qui affiche des données provenant d'un serveur
 </html>
 ```
 
+Vous pouvez exécuter cet exemple en enregistrant le code dans un fichier HTML et en l'ouvrant dans un navigateur. Vous devriez voir les données affichées dans la page.
+
 Dans cet exemple, la requête est envoyée au serveur avec la fonction `fetch`, qui renvoie une **promesse**. Lorsque la promesse est résolue (c'est-à-dire lorsque les données sont reçues), la fonction `then` est appelée pour afficher les données dans la page.
 
 JavaScript utilise une notation très particulière qui permet de chaîner les actions. C'est implémenté en retournant l'objet courant (`this` en C++).
@@ -136,3 +138,53 @@ int main() {
 On peut observer que le code est moins concis que le code JavaScript. L'asynchronisme est plus explicite et nécessite la création d'un thread pour effectuer la requête. La promesse est utilisée pour transmettre le résultat de la requête au thread principal.
 
 ## std::async
+
+Async est une fonction qui permet de lancer une fonction de manière asynchrone, autrement dit dans un thread séparé mais sans avoir à gérer la création du thread.
+
+Elle retourne une future qui contient le résultat de la fonction. C'est une manière plus simple de lancer une fonction de manière asynchrone sans avoir à gérer la création d'un thread.
+
+```cpp
+#include <iostream>
+#include <string>
+#include <curl/curl.h>
+#include <nlohmann/json.hpp>
+#include <future>
+
+using json = nlohmann::json;
+
+static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
+
+std::string fetchUrl(const std::string& url) {
+    CURL *curl = curl_easy_init();
+    if(!curl) return "";
+
+    std::string readBuffer;
+    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+    CURLcode res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+
+    if(res != CURLE_OK)
+        throw std::runtime_error("CURL failed: " + std::string(curl_easy_strerror(res)));
+    return readBuffer;
+}
+
+int main() {
+    // Lancement asynchrone de la requête HTTP
+    std::future<std::string> future = std::async(
+        std::launch::async, fetchUrl, "https://jsonplaceholder.typicode.com/posts");
+
+    try {
+        // Attendre et obtenir la valeur future
+        std::string result = future.get();
+        json j = json::parse(result);
+        std::cout << j.dump(4) << std::endl;
+    } catch(const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+}
+```
