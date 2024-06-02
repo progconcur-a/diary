@@ -1,5 +1,5 @@
 #include <boost/thread.hpp>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <iostream>
 
 void printHello(int id)
@@ -16,6 +16,4 @@ int main()
     }
 
     threadGroup.join_all();
-
-    return 0;
 }
