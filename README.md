@@ -2,25 +2,25 @@
 
 ## Objectifs
 
-- [ ] Système d'exploitation (POSIX)
-  - [ ] Thread/Processus
-  - [ ] Ordonnancement
-  - [ ] Mécanismes de communication IPC (signaux, files de messages, sockets)
-  - [ ] Créer un processus (`fork`, `exec`)
-  - [ ] Créer un processus léger (`thread`, `clone`)
-  - [ ] Comprendre les états d'un processus
-  - [ ] Comprendre les spécificités d'un processus léger (TID/PID), espace d'adressage
-- [ ] Programmation Concurrente
-  - [ ] Primitives de synchronisation
-    - [ ] Mécanismes de synchronisation (mutex, sémaphore, moniteur)
-  - [ ] Threads
-    - [ ] Créer un thread, terminer un thread (`thread_create`, `jthread`, `pthread`)
-  - [ ] Deadlock et starvation
+- [x] Système d'exploitation (POSIX)
+  - [x] Thread/Processus
+  - [x] Ordonnancement
+  - [x] Mécanismes de communication IPC (signaux, files de messages, sockets)
+  - [x] Créer un processus (`fork`, `exec`)
+  - [x] Créer un processus léger (`thread`, `clone`)
+  - [x] Comprendre les états d'un processus
+  - [x] Comprendre les spécificités d'un processus léger (TID/PID), espace d'adressage
+- [x] Programmation Concurrente
+  - [x] Primitives de synchronisation
+    - [x] Mécanismes de synchronisation (mutex, sémaphore, moniteur)
+  - [x] Threads
+    - [x] Créer un thread, terminer un thread (`thread_create`, `jthread`, `pthread`)
+  - [x] Deadlock et starvation
 - [ ] Programmation Parallèle
-  - [ ] Programmation Multicoeur
-    - [ ] Parallélisme de données
+  - [x] Programmation Multicoeur
+    - [x] Parallélisme de données
     - [ ] Parallélisme de tâches
-    - [ ] OpenCL
+    - [x] OpenMP
   - [ ] Programmation GPU
     - [ ] Shaders/ComputeShaders
     - [ ] CUDA
@@ -28,9 +28,9 @@
     - [ ] Interfaces graphiques
     - [ ] Jeux vidéos
     - [ ] Calcul scientifique
-    - [ ] Performance
-- [ ] Système Distribué
-  - [ ] Docker
+    - [x] Performance
+- [x] Système Distribué
+  - [x] Docker
 
 ## Journal de bord
 
@@ -73,3 +73,15 @@
 - [x] Semaphore en C++20 (`std::counting_semaphore`)
 
 ### Semaine 06 Producteur Consommateur
+
+### Semaine 08 Cache
+
+### Semaine 09 Programmation Asynchrone
+
+### Semaine 12 Docker
+
+### Semaine 13-14 (pas de cours)
+
+### Semaine 15 Thread Pool
+
+### Semaine 16 Openmp - Résumé
