@@ -13,11 +13,11 @@ On s'intéresse à une micro architecture pédagogique. Le but est de comprendre
 | `AND`       | ET bit à bit entre deux resitres            | `AND R1, R2`     |
 | `OR`        | OU bit à bit entre deux registres           | `OR R1, R2`      |
 | `XOR`       | OU exclusif bit à bit entre deux registres  | `XOR R1, R2`     |
-| `NOT`       | Inverse les bits d'un registre | `NOT R1` |
+| `NOT`       | Inverse les bits d'un registre              | `NOT R1`         |
 | `MUL`       | Multiplie deux registres                    | `MUL R1, R2`     |
 | `JMP`       | Saut inconditionnel                         | `JMP 0x00`       |
 | `JZ`        | Saut si zéro                                | `JZ 0x00`        |
-| `JNZ`       | Saut si non zéro | `JNZ 0x00` |
+| `JNZ`       | Saut si non zéro                            | `JNZ 0x00`       |
 | `LOAD`      | Charge une valeur dans un registre          | `LOAD R1, 0x00`  |
 | `STORE`     | Stocke une valeur dans la mémoire           | `STORE 0x00, R1` |
 | `PUSH`      | Empile une valeur dans la pile              | `PUSH R1`        |
@@ -55,3 +55,32 @@ Quel serait l'algorithme pour faire une division euclidienne en assembleur ? Ess
 ## Exercice 2 : PGCD
 
 Implémenter en assembleur la fonction `int pgcd(int a, int b)`, utiliser la division euclidienne précédente.
+
+## Notes
+
+Contrat: si je rentre dans une section de code "macro"
+R1..R3 sous la responsabilité de l'appelant de sauver les registres
+R4..R6 sous la responsabilité de l'appelé de sauver les registres
+
+% Unused registers R1, R3, R7
+% R6, value of fuel in engine
+% R5, remaining oxygen tank level
+LOAD R1, 0xff32
+
+% /!\ Used registed R1
+
+### POP PUSH
+
+```asm
+
+    push R3
+    call algorithm
+    pop R3
+
+algorithm:
+    push R6
+    % J'ai besoin de R3, R6
+
+    pop R6
+    ret
+```
