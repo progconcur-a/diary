@@ -1,0 +1,206 @@
+execve("./two-threads", ["./two-threads"], 0x7ffdc5de6fe8 /* 35 vars */) = 0
+brk(NULL)                               = 0x55d77297e000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe70d5f4000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=45535, ...}) = 0
+mmap(NULL, 45535, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe70d5e8000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=2592224, ...}) = 0
+mmap(NULL, 2609472, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe70d36a000
+mmap(0x7fe70d407000, 1343488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9d000) = 0x7fe70d407000
+mmap(0x7fe70d54f000, 552960, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e5000) = 0x7fe70d54f000
+mmap(0x7fe70d5d6000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26b000) = 0x7fe70d5d6000
+mmap(0x7fe70d5e4000, 12608, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe70d5e4000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=183024, ...}) = 0
+mmap(NULL, 185256, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe70d33c000
+mmap(0x7fe70d340000, 147456, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7fe70d340000
+mmap(0x7fe70d364000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fe70d364000
+mmap(0x7fe70d368000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x7fe70d368000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+fstat(3, {st_mode=S_IFREG|0755, st_size=2125328, ...}) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2170256, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe70d12a000
+mmap(0x7fe70d152000, 1605632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7fe70d152000
+mmap(0x7fe70d2da000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b0000) = 0x7fe70d2da000
+mmap(0x7fe70d329000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1fe000) = 0x7fe70d329000
+mmap(0x7fe70d32f000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe70d32f000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=952616, ...}) = 0
+mmap(NULL, 950296, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe70d041000
+mmap(0x7fe70d051000, 520192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x7fe70d051000
+mmap(0x7fe70d0d0000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8f000) = 0x7fe70d0d0000
+mmap(0x7fe70d128000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe7000) = 0x7fe70d128000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe70d03f000
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe70d03c000
+arch_prctl(ARCH_SET_FS, 0x7fe70d03c740) = 0
+set_tid_address(0x7fe70d03ca10)         = 141247
+set_robust_list(0x7fe70d03ca20, 24)     = 0
+rseq(0x7fe70d03d060, 0x20, 0, 0x53053053) = 0
+mprotect(0x7fe70d329000, 16384, PROT_READ) = 0
+mprotect(0x7fe70d128000, 4096, PROT_READ) = 0
+mprotect(0x7fe70d368000, 4096, PROT_READ) = 0
+mprotect(0x7fe70d5d6000, 45056, PROT_READ) = 0
+mprotect(0x55d761b5a000, 4096, PROT_READ) = 0
+mprotect(0x7fe70d62c000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7fe70d5e8000, 45535)           = 0
+futex(0x7fe70d5e47bc, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+getrandom("\xdf\x94\x00\x40\x5e\x78\x27\xdd", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x55d77297e000
+brk(0x55d77299f000)                     = 0x55d77299f000
+rt_sigaction(SIGRT_1, {sa_handler=0x7fe70d1c3530, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fe70d16f330}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fe70c83b000
+mprotect(0x7fe70c83c000, 8388608, PROT_READ|PROT_WRITE) = 0
+rt_sigprocmask(SIG_BLOCK, ~[], [], 8)   = 0
+clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fe70d03b990, parent_tid=0x7fe70d03b990, exit_signal=0, stack=0x7fe70c83b000, stack_size=0x7fff80, tls=0x7fe70d03b6c0}strace: Process 141248 attached
+ => {parent_tid=[141248]}, 88) = 141248
+[pid 141248] rseq(0x7fe70d03bfe0, 0x20, 0, 0x53053053 <unfinished ...>
+[pid 141247] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 141248] <... rseq resumed>)        = 0
+[pid 141247] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 141248] set_robust_list(0x7fe70d03b9a0, 24 <unfinished ...>
+[pid 141247] mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+[pid 141248] <... set_robust_list resumed>) = 0
+[pid 141247] <... mmap resumed>)        = 0x7fe70c03a000
+[pid 141248] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 141247] mprotect(0x7fe70c03b000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+[pid 141248] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 141247] <... mprotect resumed>)    = 0
+[pid 141248] fstat(1,  <unfinished ...>
+[pid 141247] rt_sigprocmask(SIG_BLOCK, ~[],  <unfinished ...>
+[pid 141248] <... fstat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+[pid 141247] <... rt_sigprocmask resumed>[], 8) = 0
+[pid 141248] mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0 <unfinished ...>
+[pid 141247] clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7fe70c83a990, parent_tid=0x7fe70c83a990, exit_signal=0, stack=0x7fe70c03a000, stack_size=0x7fff80, tls=0x7fe70c83a6c0} <unfinished ...>
+[pid 141248] <... mmap resumed>)        = 0x7fe70403a000
+strace: Process 141249 attached
+[pid 141248] munmap(0x7fe70403a000, 66871296 <unfinished ...>
+[pid 141247] <... clone3 resumed> => {parent_tid=[141249]}, 88) = 141249
+[pid 141249] rseq(0x7fe70c83afe0, 0x20, 0, 0x53053053 <unfinished ...>
+[pid 141248] <... munmap resumed>)      = 0
+[pid 141247] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 141249] <... rseq resumed>)        = 0
+[pid 141247] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 141249] set_robust_list(0x7fe70c83a9a0, 24 <unfinished ...>
+[pid 141248] munmap(0x7fe70c000000, 237568 <unfinished ...>
+[pid 141247] futex(0x7fe70d03b990, FUTEX_WAIT_BITSET|FUTEX_CLOCK_REALTIME, 141248, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+[pid 141249] <... set_robust_list resumed>) = 0
+[pid 141248] <... munmap resumed>)      = 0
+[pid 141249] rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+[pid 141248] mprotect(0x7fe708000000, 135168, PROT_READ|PROT_WRITE <unfinished ...>
+[pid 141249] <... rt_sigprocmask resumed>NULL, 8) = 0
+[pid 141248] <... mprotect resumed>)    = 0
+[pid 141249] futex(0x7fe70d32f710, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+[pid 141248] futex(0x7fe70d32f710, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+[pid 141249] <... futex resumed>)       = -1 EAGAIN (Resource temporarily unavailable)
+[pid 141249] futex(0x7fe70d32f710, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+[pid 141248] <... futex resumed>)       = 0
+[pid 141249] <... futex resumed>)       = 0
+[pid 141248] write(1, "Thread A: Thread B: 0 sleep for "..., 39 <unfinished ...>
+[pid 141249] futex(0x7fe70d32f710, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+[pid 141248] <... write resumed>)       = 39
+[pid 141248] futex(0x7fe70d32f710, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+[pid 141249] <... futex resumed>)       = 0
+[pid 141248] <... futex resumed>)       = 1
+[pid 141249] futex(0x7fe70d32f710, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=383000000},  <unfinished ...>
+[pid 141249] <... futex resumed>)       = 0
+[pid 141249] write(1, "0 sleep for 886ms\n", 18) = 18
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=886000000}, 0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 1 sleep for 777ms\n", 28) = 28
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=777000000}, 0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 2 sleep for 1915ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=915000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 1 sleep for 1793ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=793000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 3 sleep for 2335ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=335000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 2 sleep for 2386ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=386000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 4 sleep for 492ms\n", 28) = 28
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=492000000}, 0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 5 sleep for 2649ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=649000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 3 sleep for 421ms\n", 28) = 28
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=421000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 4 sleep for 362ms\n", 28) = 28
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=362000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 5 sleep for 1027ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=27000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 6 sleep for 2690ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=690000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 6 sleep for 2059ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=59000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 7 sleep for 1763ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=763000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 7 sleep for 2926ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=926000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 8 sleep for 540ms\n", 28) = 28
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=540000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 9 sleep for 426ms\n", 28) = 28
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=426000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 10 sleep for 172ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=172000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 11 sleep for 736ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=736000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 8 sleep for 1211ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=211000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 12 sleep for 368ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=368000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 13 sleep for 567ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=567000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 9 sleep for 429ms\n", 28) = 28
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=429000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 14 sleep for 782ms\n", 29) = 29
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=782000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 10 sleep for 530ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=530000000}, 0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 11 sleep for 1862ms\n", 30) = 30
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=862000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 15 sleep for 1123ms\n", 30) = 30
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=123000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 16 sleep for 67ms\n", 28) = 28
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=67000000}, 0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 17 sleep for 1135ms\n", 30) = 30
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=1, tv_nsec=135000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 12 sleep for 929ms\n", 29) = 29
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=0, tv_nsec=929000000},  <unfinished ...>
+[pid 141248] <... clock_nanosleep resumed>0x7fe70d03adb0) = 0
+[pid 141248] write(1, "Thread A: 18 sleep for 2802ms\n", 30) = 30
+[pid 141248] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=802000000},  <unfinished ...>
+[pid 141249] <... clock_nanosleep resumed>0x7fe70c839db0) = 0
+[pid 141249] write(1, "Thread B: 13 sleep for 2022ms\n", 30) = 30
+[pid 141249] clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=2, tv_nsec=22000000},  <unfinished ...>
+[pid 141247] <... futex resumed>)       = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+strace: Process 141247 detached
+strace: Process 141248 detached
+strace: Process 141249 detached
