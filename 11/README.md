@@ -112,7 +112,9 @@ Applications typiques :
 
 ## Moniteur
 
-Une classe qui encapsule des méthodes d'accès à une structure de données, avec des mécanismes de protection contre l'accès concurrent, est un moniteur.
+Moniteur vient du latin *monere* qui signifie "avertir" ou "conseiller". En programmation, un moniteur est une abstraction de synchronisation qui permet de gérer l'accès à des ressources partagées.
+
+Il s'agit d'une classe qui encapsule des méthodes d'accès à une structure de données, avec des mécanismes de protection contre l'accès concurrent, est un moniteur.
 
 - Données partagées
 - Abstraction via des méthodes d'accès
